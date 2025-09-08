@@ -34,13 +34,13 @@
                 <div class="menu" id="menu">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/" class="nav-link">Projects</a>
-                    <a href="/" class="nav-link">About</a>
+                    <a href="#about" class="nav-link">About</a>
                     <a href="/" class="nav-link">Services</a>
                     <a href="/" class="nav-link">Blog</a>
                 </div>
 
                 <button class="cta-button">
-                    <span class="button-content">Contact Us</span>
+                    <span class="button-content" id="cta">Contact Us</span>
                 </button>
   
                 <div class="hamburger" id="hamburger">
@@ -98,14 +98,14 @@
         <!-- Hero Section ends here -->
 
         <!-- About section starts here -->
-        <section class="about-section">
+        <section class="about-section" id="about">
           <div class="container">
              <div class="about-content">
                 <div class="about-image">
                   <img src="assets/herobg.webp" alt="Find House">
                 </div>
                 <div class="about-text">
-                  <h3>24 years in business with a global network of associates</h3>
+                  <h3>24 Years in Business with a Global Network of Associates</h3>
                   <h2><span>About</span> Medallion Associates</h2>
                   <div class="about-desc-section">
                     <p>Medallion Associates offer bespoke asset management solutions. Our asset management capabilities
@@ -124,8 +124,8 @@
       <!-- About section ends here -->
 
       <!-- CTA section starts here -->
-      <section class="hero-wrapper">
-        <div class="hero">
+      <section class="hero-wrapper" id="cta">
+        <div class="hero cta">
             <div class="hero-line cta-line-top"></div>
             <div class="hero-line hero-line-bottom"></div>
             <div class="hero-line hero-line-left"></div>
@@ -154,6 +154,67 @@
       <!-- CTA section ends here -->
     </main>
     
+    <!-- Footer starts here -->
+    <footer class="footer-container">
+        <section class="footer">
+            <div class="footer-left">
+                <div class="footer-head">
+                    <a href="/" class="nav-logo">
+                        <img src="/assets/medallion-logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="footer-text">
+                    <p>Medallion Associates is an investment advisory firm with access to asset classes, private funds,
+                        real estate investment avenues and businesses globally.</p>
+                </div>
+                <div class="footer-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our Newsletter</p>
+                    <form class="email-container">
+                        <input type="text" placeholder="Your Email..." class="email-input">
+                        <button type="submit" class="send-button">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-site-pages">
+                    <ul>
+                        <li class="footer-li-heading">Quick Links</li>
+                        <li>Homepage</li>
+                        <li>About Us</li>
+                        <li>Our Services</li>
+                        <li>Achivements</li>
+                    </ul>
+                </div>
+                <div class="footer-site-pages">
+                    <ul>
+                        <li class="footer-li-heading">Resources</li>
+                        <li>Our News</li>
+                        <li>Leadership</li>
+                        <li>Blogs</li>
+                        <li>Links</li>
+                    </ul>
+                </div>
+                <div class="footer-legal-links">
+                    <ul>
+                        <li class="footer-li-heading">Legal</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Services</li>
+                        <li>Disclaimer</li>
+                        <li>Cookie Policy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer ends here -->
       
     <!-- Script file -->
     <script src="script.js"></script>
