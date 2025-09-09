@@ -749,3 +749,465 @@
   }
 
  }
+
+
+
+
+
+
+
+
+
+
+/* ikramullah */
+
+/* css for project section starts here */
+.project-header {
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+    flex-flow: column;
+    display: flex;
+}
+
+.heading-one {
+    letter-spacing: .123em;
+    text-transform: uppercase;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+.project-header h2 {
+    letter-spacing: -.02em;
+    font-family: Geist, sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-top: -5px;
+    margin-left: 90px;
+}
+
+.heading-two {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: .123em;
+    text-transform: uppercase;
+    margin-left: 100px;
+    margin-top: -1px;
+}
+
+/* ✅ Fixed 2-column grid (default) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  gap: 2rem 5rem;
+  justify-content: center;
+}
+
+.card {
+  width: 500px;
+  max-width: 100%;
+  padding: 16px;
+  background: #fff;
+  margin-bottom: 0;
+}
+
+/* Line default */
+.card-top-line {
+  height: 1px;
+  background: gray;
+  border-radius: 12px 12px 0 0;
+  margin: 50px -16px 16px -16px;
+  transition: background 0.3s ease;
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: black;
+}
+.card-header .year {
+  color: #555;
+}
+
+/* Image */
+.card-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Description */
+.card-description {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 16px;
+  margin-top: 5px;
+}
+
+/* Details box */
+.card-details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0;
+  background: #fafafa;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family:"Gill Sans", sans-serif;
+}
+
+/* Rows inside */
+.card-details p {
+  margin: 0;
+  padding: 1rem 1rem;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  transition: border-color 0.3s ease;
+}
+
+.card-details p:last-child {
+  border-bottom: none;
+}
+
+/* ✅ Hover effect for border + middle line */
+.card:hover .card-details {
+  border-color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover .card-details p {
+  border-bottom-color: #000;
+}
+
+/* ✅ Hover only changes the border */
+.card-details:hover {
+  border-color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transition only for line, image, and details box */
+.card-image img,
+.card-top-line,
+.card-details {
+  transition: all 0.3s ease;
+}
+
+/* ✅ Image hover */
+.card:hover .card-image img {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* ✅ Line hover */
+.card:hover .card-top-line {
+  background: #000;
+}
+
+/* ✅ Details box hover */
+.card:hover .card-details {
+  border-color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= FAQ Section ================= */
+.questions-section{
+  margin-top:100px;
+}
+
+.questions-section p{
+  margin-left:30px;
+}
+
+.questions-section h2{
+  font-family: Geist, sans-serif;
+  font-size:48px;
+  font-weight: 10;
+  margin-left:30px;
+}
+
+.questions-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+}
+
+.left-col {
+  flex: 1;
+}
+
+.left-col p {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.left-col h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-left:10px;
+}
+
+.right-col {
+  flex: 2;
+  width: 100%;
+}
+
+.faq-item {
+  border-bottom: 2px solid #eee;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  cursor: pointer;
+  font-size:10px;
+}
+
+.faq-question span {
+  font-size: 25px;
+  color: #111;
+}
+
+.faq-answer {
+  display: none;
+  padding-bottom: 20px;
+  color: #666;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.toggle-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  padding: 20px 100px;
+}
+
+.faq-item.active .toggle-btn::before {
+  content: "–";
+}
+
+.toggle-btn::before {
+  content: "+";
+}
+
+/* ================= Services Section ================= */
+.services-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+  text-align: center;
+}
+
+.services-section > p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Left block - Design */
+.services-left {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.services-left img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+/* Right block - Development + SEO */
+.services-right {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 30px;
+}
+
+.services-right div {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.services-right img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.services-right{
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 15px
+}
+
+.services-heading {
+  text-align: center;
+  margin: 0 auto 15px auto;
+}
+
+.services-subheading {
+  text-align: center;
+  margin: 0 auto 15px auto;
+  max-width: 800px; /* keeps it nicely contained */
+}
+
+/* ================= Leadership Section ================= */
+.leadership-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section intro */
+.leadership-section > p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.leadership-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 50px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ===== Two-column layout ===== */
+.leadership-section .container {
+  display: grid;
+    grid-template-columns: 1.8fr 1.2fr; /* left = text, right = image */
+  gap: 50px;
+  align-items: start;
+}
+
+/* Text block */
+.leadership-section .text-block p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* Image block */
+.leadership-section .image-block img {
+  width: 100%;        /* take full width of container */
+  height: auto;       /* maintain aspect ratio */
+  max-width: 500px;   /* optional limit so it doesn’t get too big */
+  object-fit: cover;  /* keep it looking nice if cropped */
+}
+
+/* ================= Responsive Media Queries (ikramullah) ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .project-header h2 {
+    font-size: 3rem;
+    margin-left: 20px;
+  }
+
+   .leadership-section .container {
+    grid-template-columns: 1fr;  /* stack columns on smaller screens */
+  }
+
+  .leadership-section .image-block img {
+    max-width: 100%;   /* let image fill container width */
+    height: auto;      /* maintain aspect ratio */
+    min-height: unset; /* remove fixed min-height */
+  }
+  .heading-one,
+  .heading-two {
+    margin-left: 20px;
+  }
+
+  /* Card grid becomes flexible */
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 20px;
+  }
+
+  .card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* FAQ section responsive */
+  .questions-section {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .faq-question, .faq-item.active .faq-answer {
+    padding: 15px 20px;
+    gap:5px;
+  }
+
+  /* Services section */
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-left, .services-right div {
+    text-align: center;
+  }
+
+  .services-left img, .services-right img {
+    margin: 0
+  }
+}
