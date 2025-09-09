@@ -26,11 +26,31 @@
   
   body {
     font-family: var(--font-family);
+    background: var(--white);
   }
  
   a{
     text-decoration: none;
   }
+
+/* Initial hidden state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When in view */
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-left {
+  transform: translateX(-50px);
+}
+.animate-right {
+  transform: translateX(50px);
+}  
 
   /* Container */
 .container {
@@ -362,7 +382,7 @@
 
 
   /* CSS for About section */
-.about-section{
+.about-section,.project-section{
   background-color: var(--bg-secondary);
   padding-block: 7rem;
 }
@@ -426,6 +446,357 @@
   height: 100%;
   width: 100%;
 }
+
+
+/* CSS for Services */
+.service-section{
+  padding-block: 4rem;
+  color: var(--black);
+}
+.service-top-heading{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.service-top-heading h2{
+  flex: 1;
+  font-size: 48px;
+  font-weight: 400;
+}
+.service-desc{
+  flex: 1;
+}
+.service-desc p{
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+.service-btn{
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.service-btn:hover{
+  transform: translateY(-4px);
+}
+.service-cards{
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.left-card{
+  height: 560px;
+}
+.right-top-card{
+  height: 270px;
+}
+.service-card{
+  width: 100%;  
+  border-radius: 20px;
+  overflow: hidden;
+}
+.service-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.right-card{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-overlay img {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.service-card:hover .card-overlay img {
+  transform: scale(1.09);
+}
+
+.card-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--light-blue);
+  z-index: 1;
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--white);
+}
+
+.card-content h3 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  font-weight: 400;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  max-width: 90%;
+}
+
+
+/* CSS for FAQ */
+.faq-section{
+  padding-block: 7rem;
+}
+.questions-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  color: var(--black);
+}
+
+.left-col {
+  flex: 1;
+}
+.left-col p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--dark-gray);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.questions-section h2{
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.right-col {
+  flex: 2;
+}
+.faq-item {
+  border-bottom: 2px solid var(--light-blue);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  cursor: pointer;
+}
+.faq-question span {
+  font-size: 24px;
+}
+
+.faq-answer {
+  display: none;
+  color: #666;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  padding: 20px 32px;
+}
+
+.toggle-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.faq-item.active .toggle-btn::before {
+  content: "–";
+}
+.toggle-btn::before {
+  content: "+";
+}
+
+/* CSS for Project */
+.project-heading p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--dark-gray);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.project-heading h2{
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--blue);
+} 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.project-card {
+  width: 100%;
+  padding: 24px;
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-accent-line {
+  height: 1px;
+  background: gray;
+  border-radius: 12px 12px 0 0;
+  margin: 16px -16px 16px -16px;
+  transition: background 0.3s ease;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--blue);
+}
+
+.project-year {
+  color: var(--light-blue);
+}
+
+.project-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.project-description {
+  font-size: 20px;
+  color: var(--light-blue);
+  margin-bottom: 16px;
+}
+
+.project-details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: var(--white);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-details p {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  transition: border-color 0.3s ease;
+  color: var(--blue);
+}
+
+.project-details p:last-child {
+  border-bottom: none;
+}
+
+.project-card:hover .project-accent-line {
+  background: var(--black);
+}
+
+.project-card:hover .project-image img {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.project-card:hover .project-details,
+.project-details:hover {
+  border-color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .project-details p {
+  border-bottom-color: #000;
+}
+
+
+/* CSS for Leadership */
+.leadership-section{
+  padding-block: 4rem;
+}
+.leadership-heading h3{
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.leadership-heading p{
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.leadership-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.leadership-text-box {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1rem;
+  color: var(--blue);
+  line-height: 1.4;
+}
+.text-box-1{
+  margin-bottom: 16px;
+}
+.leadership-image-box{
+  width: 100%;
+  height: 460px;
+  border-radius: 99rem;
+  overflow: hidden;
+  background-color: var(--light-blue);
+}
+.leadership-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 
 /* CSS for CTA  */
 .cta{
@@ -650,6 +1021,19 @@
     font-size: 3rem;
     text-align: start;
   }
+  .questions-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .project-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  .leadership-text-box {
+    height: auto;
+  }
   .footer {
     flex-direction: column;
   }
@@ -706,7 +1090,54 @@
    }
    .contact-form form {
     padding: 0;
- }
+  }
+  .service-top-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-top-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-desc p {
+    font-size: 1rem;
+  }
+
+  .service-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .left-card,
+  .right-top-card {
+    height: auto;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+
+  .card-content p {
+    max-width: 100%;
+    line-height: 1.2;
+  }
+  .project-details p {
+    font-size: 14px;
+  }
+  .right-card {
+    grid-template-rows: auto;
+  }
  }
 
 
@@ -741,6 +1172,18 @@
   .contact-form p {
     font-size: 1rem;
   }
+  .questions-section h2,.project-heading h2,.leadership-heading h3{
+    font-size: 32px;
+  }
+  .faq-question {
+    padding: 12px 0px;
+  }
+  .faq-question span,.faq-answer {
+    font-size: 18px;
+  }
+  .project-description {
+    font-size: 14px;
+  }
   .footer-right {
     flex-direction: column;
   }
@@ -749,465 +1192,3 @@
   }
 
  }
-
-
-
-
-
-
-
-
-
-
-/* ikramullah */
-
-/* css for project section starts here */
-.project-header {
-    grid-column-gap: 1.25rem;
-    grid-row-gap: 1.25rem;
-    flex-flow: column;
-    display: flex;
-}
-
-.heading-one {
-    letter-spacing: .123em;
-    text-transform: uppercase;
-    margin-left: 100px;
-    font-size: 20px;
-}
-
-.project-header h2 {
-    letter-spacing: -.02em;
-    font-family: Geist, sans-serif;
-    font-size: 4rem;
-    font-weight: 400;
-    margin-top: -5px;
-    margin-left: 90px;
-}
-
-.heading-two {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: .123em;
-    text-transform: uppercase;
-    margin-left: 100px;
-    margin-top: -1px;
-}
-
-/* ✅ Fixed 2-column grid (default) */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 500px);
-  gap: 2rem 5rem;
-  justify-content: center;
-}
-
-.card {
-  width: 500px;
-  max-width: 100%;
-  padding: 16px;
-  background: #fff;
-  margin-bottom: 0;
-}
-
-/* Line default */
-.card-top-line {
-  height: 1px;
-  background: gray;
-  border-radius: 12px 12px 0 0;
-  margin: 50px -16px 16px -16px;
-  transition: background 0.3s ease;
-}
-
-/* Header */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: black;
-}
-.card-header .year {
-  color: #555;
-}
-
-/* Image */
-.card-image img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  height: 520px;
-  object-fit: cover;
-}
-
-/* Description */
-.card-description {
-  font-size: 20px;
-  color: #444;
-  margin-bottom: 16px;
-  margin-top: 5px;
-}
-
-/* Details box */
-.card-details {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0;
-  background: #fafafa;
-  overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-family:"Gill Sans", sans-serif;
-}
-
-/* Rows inside */
-.card-details p {
-  margin: 0;
-  padding: 1rem 1rem;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  transition: border-color 0.3s ease;
-}
-
-.card-details p:last-child {
-  border-bottom: none;
-}
-
-/* ✅ Hover effect for border + middle line */
-.card:hover .card-details {
-  border-color: #000;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-}
-
-.card:hover .card-details p {
-  border-bottom-color: #000;
-}
-
-/* ✅ Hover only changes the border */
-.card-details:hover {
-  border-color: #000;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Smooth transition only for line, image, and details box */
-.card-image img,
-.card-top-line,
-.card-details {
-  transition: all 0.3s ease;
-}
-
-/* ✅ Image hover */
-.card:hover .card-image img {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-}
-
-/* ✅ Line hover */
-.card:hover .card-top-line {
-  background: #000;
-}
-
-/* ✅ Details box hover */
-.card:hover .card-details {
-  border-color: #000;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-}
-
-/* ================= FAQ Section ================= */
-.questions-section{
-  margin-top:100px;
-}
-
-.questions-section p{
-  margin-left:30px;
-}
-
-.questions-section h2{
-  font-family: Geist, sans-serif;
-  font-size:48px;
-  font-weight: 10;
-  margin-left:30px;
-}
-
-.questions-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 40px;
-}
-
-.left-col {
-  flex: 1;
-}
-
-.left-col p {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.left-col h1 {
-  font-size: 40px;
-  font-weight: 600;
-  margin-left:10px;
-}
-
-.right-col {
-  flex: 2;
-  width: 100%;
-}
-
-.faq-item {
-  border-bottom: 2px solid #eee;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 100px;
-  cursor: pointer;
-  font-size:10px;
-}
-
-.faq-question span {
-  font-size: 25px;
-  color: #111;
-}
-
-.faq-answer {
-  display: none;
-  padding-bottom: 20px;
-  color: #666;
-  font-size: 24px;
-  line-height: 1.6;
-}
-
-.toggle-btn {
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-  padding: 20px 100px;
-}
-
-.faq-item.active .toggle-btn::before {
-  content: "–";
-}
-
-.toggle-btn::before {
-  content: "+";
-}
-
-/* ================= Services Section ================= */
-.services-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.services-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #222;
-  text-align: center;
-}
-
-.services-section > p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.services-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: start;
-}
-
-/* Left block - Design */
-.services-left {
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.services-left img {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 20px;
-}
-
-/* Right block - Development + SEO */
-.services-right {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 30px;
-}
-
-.services-right div {
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.services-right img {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-.services-right{
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 15px
-}
-
-.services-heading {
-  text-align: center;
-  margin: 0 auto 15px auto;
-}
-
-.services-subheading {
-  text-align: center;
-  margin: 0 auto 15px auto;
-  max-width: 800px; /* keeps it nicely contained */
-}
-
-/* ================= Leadership Section ================= */
-.leadership-section {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Section intro */
-.leadership-section > p {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.leadership-section h2 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 50px;
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* ===== Two-column layout ===== */
-.leadership-section .container {
-  display: grid;
-    grid-template-columns: 1.8fr 1.2fr; /* left = text, right = image */
-  gap: 50px;
-  align-items: start;
-}
-
-/* Text block */
-.leadership-section .text-block p {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.8;
-  margin-bottom: 25px;
-  text-align: left;
-}
-
-/* Image block */
-.leadership-section .image-block img {
-  width: 100%;        /* take full width of container */
-  height: auto;       /* maintain aspect ratio */
-  max-width: 500px;   /* optional limit so it doesn’t get too big */
-  object-fit: cover;  /* keep it looking nice if cropped */
-}
-
-/* ================= Responsive Media Queries (ikramullah) ================= */
-
-/* Tablet */
-@media (max-width: 992px) {
-  .project-header h2 {
-    font-size: 3rem;
-    margin-left: 20px;
-  }
-
-   .leadership-section .container {
-    grid-template-columns: 1fr;  /* stack columns on smaller screens */
-  }
-
-  .leadership-section .image-block img {
-    max-width: 100%;   /* let image fill container width */
-    height: auto;      /* maintain aspect ratio */
-    min-height: unset; /* remove fixed min-height */
-  }
-  .heading-one,
-  .heading-two {
-    margin-left: 20px;
-  }
-
-  /* Card grid becomes flexible */
-  .card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 0 20px;
-  }
-
-  .card {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  /* FAQ section responsive */
-  .questions-section {
-    flex-direction: column;
-    gap: 30px;
-    padding: 0 20px;
-  }
-  .faq-question, .faq-item.active .faq-answer {
-    padding: 15px 20px;
-    gap:5px;
-  }
-
-  /* Services section */
-  .services-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .services-left, .services-right div {
-    text-align: center;
-  }
-
-  .services-left img, .services-right img {
-    margin: 0
-  }
-}
