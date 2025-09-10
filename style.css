@@ -277,7 +277,7 @@
 }
  .glass-card {
     padding-inline: 7rem 6.4rem;
-    max-width: 74%;
+    max-width: 75%;
   }
   .hero span{
     text-transform: uppercase;
@@ -968,6 +968,10 @@
   .navbar-container {
     padding: 1rem 5.4rem;
    }
+   .glass-card {
+    padding-inline: 4rem;
+    max-width: 100%;
+   }
    .footer{
     padding: 48px;
    }
@@ -1006,10 +1010,6 @@
   }
   .cta-button{
     display: none;
-  }
-  .glass-card {
-    padding-inline: 4rem;
-    max-width: 100%;
   }
   .about-content {
    flex-direction: column;
