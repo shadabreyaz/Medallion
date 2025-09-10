@@ -421,7 +421,7 @@
   color: var(--black);
 }
 .about-text h2 span{
- font-size: 1.4rem; 
+ font-size: 2rem; 
  font-weight: 400;
  padding-right: 24px;
  text-transform: capitalize;
@@ -433,7 +433,7 @@
   gap: 32px;
 }
 .about-desc-section p{
-  font-size: 14px;
+  font-size: 16px;
 }
 .about-desc-img{
   width: 100%;
