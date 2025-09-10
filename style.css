@@ -54,7 +54,7 @@
 
   /* Container */
 .container {
-    max-width: 1500px;
+    max-width: 1540px;
     margin: 0 auto;
     padding: 0 72px;
 }
@@ -67,7 +67,7 @@
     transform: translate(-50%, 0%);
     width: 100%;
     z-index: 1000;
-    max-width: 1500px;
+    max-width: 1540px;
     margin-inline: auto;
     padding: 1rem 8.4rem;
     transition: all 0.2s ease;
@@ -191,7 +191,7 @@
     background-position: center;
     overflow: hidden;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1540px;
     margin-inline: auto;
     height: 100vh;
     display: flex;
@@ -209,7 +209,7 @@
     pointer-events: none;
     z-index: 3;
   }
-  .hero-line-top,.hero-line-bottom,.cta-line-top{
+  .hero-line-top,.hero-line-bottom{
     left: 0;    
     right: 0;
     height:1.5px
@@ -223,7 +223,6 @@
     bottom: 60px;  
     animation-delay: 0.9s;
     transform-origin: center;
-
   }
   .hero-line-left,.hero-line-right{
     top: 0px;      
@@ -799,20 +798,19 @@
 
 
 /* CSS for CTA  */
-.cta{
+.cta-section{
+  background-image: url('assets/herobg.webp');
+  background-repeat: no-repeat;
   background-size:cover;
-  background-position:unset;
-}
-.cta-line-top {
-  top: 90px;   
-  animation-delay: 0.3s;
-  transform-origin: center;
+  background-position: left;
+  padding-block: 7rem;
+  position: relative;
 }
 .cta-content{
-  padding-inline: 6rem;
+  color: var(--white);
 }
 .cta-content h3{
-  font-size: 4.2rem;
+  font-size: 4rem;
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
@@ -853,10 +851,9 @@
   font-size: 18px;
 }
 
-
 /* CSS for Footer */
 .footer-container{
-  max-width: 1500px;
+  max-width: 1540px;
   margin: 0 auto;
 }
 .footer {
@@ -1045,7 +1042,7 @@
     padding: 0 56px;
   }
   .navbar-container {
-    padding: 1rem 2.4rem;
+    padding: 1rem 2rem;
    }
    .nav-logo img{
     height: 70px;
@@ -1077,9 +1074,6 @@
   .hero-bottom {
     padding-inline: 0;
     gap: 0.5rem;
-  }
-  .cta-content {
-    padding-inline: 2.8rem;
   }
   .cta-content h3 {
     font-size: 2rem;
@@ -1165,9 +1159,6 @@
   }
   .about-desc-img img {
     object-fit: none;
-  }
-  .cta-content {
-    padding-inline: 2rem;
   }
   .contact-form p {
     font-size: 1rem;
