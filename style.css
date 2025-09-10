@@ -285,10 +285,10 @@
   }
 
   .hero h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 400;
     line-height: 1.11;
-    margin-block: 20px 12px;
+    margin-block: 16px 12px;
   }
   
   .glass-card>p {
